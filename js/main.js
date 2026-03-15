@@ -7,16 +7,27 @@ const CountryList = {
   addButton: document.getElementById("add-button"),
   clearButton: document.getElementById("clear-button"),
 
-  // Main assignment variable, learning how to manipulate Map objects
+  //   Main assignment variable, learning how to manipulate Map objects
+  //   Outside of main flow; Needs semi-permanence. Function addToList needs it to be stable
+  //   to consistently update, clearList needs to clear it to allow for brand new lists.
   countries: new Map(),
 
   // ************* Function Section ***************
   addToList: function () {
     this.addButton.addEventListener("click", () => {
+      // Complex. First creates iterator object with Map.values, then generates an iterable array
       let iteratorArray = Array.from(this.countries.values());
 
       //   countries.set(1, "Example Country");
       //   console.log(countries.get(1));
+
+      function valueMatch(iteratorArray, countryValue) {
+        if (iteratorArray.includes(countryValue)) {
+          return true;
+        }
+        //   console.log("error! Country was not found");
+        return false;
+      }
 
       if (!valueMatch(iteratorArray, this.txtAdd.value)) {
         this.olItems.innerHTML = "";
@@ -29,14 +40,6 @@ const CountryList = {
         }
       }
     });
-
-    function valueMatch(iteratorArray, countryValue) {
-      if (iteratorArray.includes(countryValue)) {
-        return true;
-      }
-      //   console.log("error! Country was not found");
-      return false;
-    }
   },
 
   clearList: function () {
@@ -48,5 +51,7 @@ const CountryList = {
   },
 };
 
+// Calls functions from CountryList object. Unsure if there is a better way.
+// My old code would just be something like "addToList();" at the end.
 window.onload = CountryList.addToList();
 window.onload = CountryList.clearList();
