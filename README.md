@@ -4,4 +4,4 @@ This assignment is to practice utilizaiton and manipulation of the Map object in
 
 ## PS
 
-I also self-practiced putting the code within an object for the first time! With a little modification, this could be used in other projects as a simple list maker widget.
+I also self-practiced putting the code within an object for the first time! With a little modification, this could be used in other projects as a simple list maker widget. (If you wanted a very rudimentary one, that is!)

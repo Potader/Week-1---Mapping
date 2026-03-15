@@ -6,6 +6,8 @@ body {
   background-size: 100% 100%;
 }
 
+/* Class section */
+
 .container {
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
@@ -15,6 +17,8 @@ body {
   width: 35%;
   margin: auto;
 }
+
+/* ID section */
 
 #add-field {
   flex: 1;
